@@ -1,6 +1,7 @@
 <?php
 namespace app\controllers;
 use yii\web\Controller;
+use dump_r\Core;
 /**
   *
   */
@@ -20,5 +21,5 @@ use yii\web\Controller;
  }
  function dump($var)
  {
-        echo '<pre>'.print_r($var,true).'</pre>';
+        echo dump_r($var);
  }
