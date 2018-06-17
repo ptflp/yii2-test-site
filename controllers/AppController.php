@@ -13,4 +13,12 @@ use yii\web\Controller;
  	public function debug ($arr) {
  		echo '<pre>'.print_r($arr,true).'</pre>';
  	}
- } ?>
+
+    public function dump($var) {
+        echo '<pre>'.print_r($var,true).'</pre>';
+    }
+ }
+ function dump($var)
+ {
+        echo '<pre>'.print_r($var,true).'</pre>';
+ }
