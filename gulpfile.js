@@ -22,11 +22,12 @@ gulp.task("reload-css", function () {
 gulp.task('serve', ['reload-css'], function() {
 
     browserSync.init({
-        server: "./src"
+        proxy: "localhost"
     });
 
     gulp.watch("./src/*.scss", ['reload-css']);
     gulp.watch("./src/*.html").on('change', browserSync.reload);
+    gulp.watch("./**/*.php").on('change', browserSync.reload);
 });
 
 
