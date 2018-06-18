@@ -22,7 +22,7 @@ gulp.task("reload-css", function () {
 gulp.task('serve', ['reload-css'], function() {
 
     browserSync.init({
-        proxy: "localhost"
+        proxy: "localhost:8000"
     });
 
     gulp.watch("./src/*.scss", ['reload-css']);
