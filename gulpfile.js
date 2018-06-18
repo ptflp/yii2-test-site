@@ -18,11 +18,9 @@ gulp.task("reload-css", function () {
 	.pipe(gulp.dest('./src/css/'))
     .pipe(browserSync.stream());
 });
-/* temp task
 gulp.task("console", function () {
-	console.log('working');
+	console.log('php changed');
 });
-*/
 gulp.task('serve', ['reload-css'], function() {
 
     browserSync.init({
