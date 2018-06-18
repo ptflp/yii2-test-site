@@ -18,11 +18,20 @@ gulp.task("reload-css", function () {
 	.pipe(gulp.dest('./src/css/'))
     .pipe(browserSync.stream());
 });
-
+/* temp task
+gulp.task("console", function () {
+	console.log('working');
+});
+*/
 gulp.task('serve', ['reload-css'], function() {
 
     browserSync.init({
-        proxy: "localhost:8000"
+        proxy: "localhost:8000",
+	    snippetOptions: {
+	        rule: {
+	            match: /$/
+	        }
+	    }
     });
 
     gulp.watch("./src/*.scss", ['reload-css']);
