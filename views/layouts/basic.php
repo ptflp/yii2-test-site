@@ -22,6 +22,9 @@ MyAsset::register($this);
 			  <li role="presentation"><?=HTML::a('Статьи',['post/index'])?></li>
 			  <li role="presentation"><?=HTML::a('Статья',['post/show'])?></li>
 			</ul>
+			<?php if (isset($this->blocks['block1'])) {
+				echo $this->blocks['block1'];
+			} ?>
 			<?=$content?>
 		</div>
 	</div>
