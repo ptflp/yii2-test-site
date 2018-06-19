@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Html;
-use app\assets\AppAsset;
+use app\assets\MyAsset;
 
-AppAsset::register($this);
+MyAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -15,7 +15,16 @@ AppAsset::register($this);
 </head>
 <body>
 	<?php $this->beginBody() ?>
-	<h1>Hello, Basic</h1>
+
+	<div class="wrap">
+		<div class="container">
+			<ul class="nav nav-pills">
+			  <li role="presentation" class="active"><a href="#">Home</a></li>
+			  <li role="presentation"><a href="#">Profile</a></li>
+			  <li role="presentation"><a href="#">Messages</a></li>
+			</ul>
+		</div>
+	</div>
 	<?=$content ?>
 <?php $this->endBody() ?>
 </body>
