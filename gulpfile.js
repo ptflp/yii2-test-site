@@ -8,6 +8,7 @@ gulp.task('watch', function () {
 gulp.task('ws', function() {
     browserSync.init({
         proxy: "localhost:8000",
+        notify: false,
 	    snippetOptions: {
 	        rule: {
 	            match: /$/
