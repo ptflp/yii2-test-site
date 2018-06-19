@@ -47,3 +47,7 @@ phpunit.phar
 /node_modules
 .env
 package-lock.json
+
+
+#sublime gulp cache files
+.sublime-gulp.cache
