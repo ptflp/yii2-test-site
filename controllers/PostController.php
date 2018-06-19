@@ -3,7 +3,10 @@ namespace app\controllers;
 use Yii;
 class PostController extends AppController {
 	public $layout = 'basic';
-	public function actionIndex(){
+	public function actionIndex($test=false){
+		if (Yii::$app->request->isAjax) {
+			return dump($_POST);
+		}
 		return $this->render('index');
 	}
 	public function actionShow(){
