@@ -12,10 +12,10 @@ class MyAsset extends AssetBundle
         'css/style.css',
     ];
     public $js = [
-        'js/scripts.js?1',
+        //'js/scripts.js?1',
     ];
     public $jsOptions = [
-        'position' => \yii\web\View::POS_BEGIN
+        'position' => \yii\web\View::POS_END
     ];
     public $depends = [
         'yii\web\YiiAsset',
