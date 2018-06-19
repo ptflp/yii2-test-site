@@ -15,17 +15,16 @@ MyAsset::register($this);
 </head>
 <body>
 	<?php $this->beginBody() ?>
-
 	<div class="wrap">
 		<div class="container">
 			<ul class="nav nav-pills">
-			  <li role="presentation" class="active"><a href="#">Home</a></li>
-			  <li role="presentation"><a href="#">Profile</a></li>
-			  <li role="presentation"><a href="#">Messages</a></li>
+			  <li role="presentation" class="active"><?=HTML::a('Главная','/')?></li>
+			  <li role="presentation"><?=HTML::a('Статьи',['post/index'])?></li>
+			  <li role="presentation"><?=HTML::a('Статья',['post/show'])?></li>
 			</ul>
+			<?=$content?>
 		</div>
 	</div>
-	<?=$content ?>
 <?php $this->endBody() ?>
 </body>
 </html>

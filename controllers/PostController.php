@@ -7,7 +7,6 @@ class PostController extends AppController {
 		return $this->render('index');
 	}
 	public function actionShow(){
-		$this->layout='main';
 		return $this->render('show');
 	}
 }
