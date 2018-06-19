@@ -6,5 +6,6 @@
 </head>
 <body>
 	<h1>Hello, Basic</h1>
+	<?=$content ?>
 </body>
 </html>
