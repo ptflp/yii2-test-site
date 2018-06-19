@@ -72,7 +72,7 @@ if (YII_DEBUG) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['127.0.0.1', '::1','172.19.0.1'],
+        'allowedIPs' => ['127.0.0.1', '::1','172.191.0.1'],
     ];
 }
 
