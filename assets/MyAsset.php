@@ -14,6 +14,9 @@ class MyAsset extends AssetBundle
     public $js = [
         'js/scripts.js?1',
     ];
+    public $jsOptions = [
+        'position' => \yii\web\View::POS_BEGIN
+    ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
