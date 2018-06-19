@@ -18,6 +18,7 @@ class PostController extends AppController {
 		return $this->render('index');
 	}
 	public function actionShow(){
+		$this->view->title='Title from controller';
 		return $this->render('show');
 	}
 }

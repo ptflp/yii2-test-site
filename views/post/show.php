@@ -2,7 +2,7 @@
 <button class="btn btn-success" id="btn">Click me</button>
 
 <?php
-$this->title='ololo';
+//$this->title='ololo';
 $js = <<< JS
 	$('#btn').on('click',function() {
 		console.log('clicked');
