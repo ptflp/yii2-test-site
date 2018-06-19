@@ -5,6 +5,7 @@ class PostController extends AppController {
 	public $layout = 'basic';
 	public function actionIndex($test=false){
 		if (Yii::$app->request->isAjax) {
+			Yii::$app->request->post();
 			return dump($_POST);
 		}
 		return $this->render('index');

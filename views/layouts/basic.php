@@ -9,7 +9,7 @@ MyAsset::register($this);
 <html lang="en">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    
+    <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
