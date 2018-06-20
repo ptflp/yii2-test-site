@@ -30,4 +30,4 @@ gulp.task('ws', function() {
 gulp.task('init', gulp.series('docker-start','ws'));
 
 
-gulp.task("default",gulp.parallel('watch','docker-start','ws'));
+gulp.task("default",gulp.parallel('watch','init'));
