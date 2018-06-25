@@ -24,7 +24,7 @@ class TestForm extends Model
     public function rules()
     {
         return [
-            [['name','email'],'required','message'=>'не может быть пустым'],
+            [['name','email'],'required'],
         ];
     }
 }
