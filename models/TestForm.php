@@ -30,6 +30,13 @@ class TestForm extends Model
             ['email','email'],
             ['name','string','min'=>$this->min],
             ['name','string','max'=>$this->max],
+            ['name','myRule'],
         ];
+    }
+    public function myRule($attr)
+    {
+        if (!in_array($this->attrs, ['hello','world'])) {
+            $this->addError($attrs,'Wrong!');
+        }
     }
 }
