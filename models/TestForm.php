@@ -31,6 +31,7 @@ class TestForm extends Model
             ['name','string','min'=>$this->min],
             ['name','string','max'=>$this->max],
             ['name','myRule'],
+            ['text','trim']
         ];
     }
     public function myRule($attr)
