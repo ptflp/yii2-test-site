@@ -12,12 +12,14 @@ class PostController extends AppController {
 		}
 		return parent::beforeAction($action);
 	}
-	public function actionIndex($test=false){
+	public function actionIndex($min=false,$max=false){
 		if (Yii::$app->request->isAjax) {
 			Yii::$app->request->post();
 			return dump($_POST);
 		}
-		$model = new TestForm;
+		$model = new TestForm();
+		$model->min = $min ? $min : $model->min;
+		$model->max = $max ? $max : $model->max;
 		return $this->render('test', compact('model'));
 	}
 	public function actionShow(){
