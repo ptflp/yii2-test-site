@@ -18,6 +18,15 @@ class PostController extends AppController {
 			return dump($_POST);
 		}
 		$model = new TestForm();
+		if ($model->load(Yii::$app->request->post())) {
+			dump(Yii::$app->request->post());
+			dump($model);
+			die();
+			if($model->validate()) {
+				Yii::$app->session->setFlash()
+
+			}
+		}
 		$model->min = $min ? $min : $model->min;
 		$model->max = $max ? $max : $model->max;
 		return $this->render('test', compact('model'));
