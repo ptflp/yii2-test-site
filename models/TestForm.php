@@ -21,4 +21,10 @@ class TestForm extends Model
             'text' => 'Текст сообщения'
         ];
     }
+    public function rules()
+    {
+        return [
+            [['name','email'],'required','message'=>'не может быть пустым'],
+        ];
+    }
 }
