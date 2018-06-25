@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 use Yii;
+use app\models\TestForm;
+
 class PostController extends AppController {
 	public $layout = 'basic';
 	public function beforeAction($action)
@@ -15,7 +17,8 @@ class PostController extends AppController {
 			Yii::$app->request->post();
 			return dump($_POST);
 		}
-		return $this->render('index');
+		$model = new TestForm;
+		return $this->render('test', compact('model'));
 	}
 	public function actionShow(){
 		$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'ключевые слова']);
