@@ -26,7 +26,8 @@ class TestForm extends Model
         return [
             [['name','email'],'required'],
             ['email','email'],
-            ['name','string','min'=>4, 'tooShort'=>'Slishkom korotko']
+            ['name','string','min'=>4, 'tooShort'=>'Slishkom korotko'],
+            ['name','string','max'=>7, 'tooLong'=>'Slishkom dlinno'],
         ];
     }
 }
