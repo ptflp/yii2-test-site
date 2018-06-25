@@ -10,8 +10,8 @@ dump($model)
 
 ?>
 <?php $form = ActiveForm::begin(['options'=> ['class'=>'form-horizontal','id'=>'myid']]) ?>
-	<?= $form->field($model, 'name')->label('Имя')?>
+	<?= $form->field($model, 'name')?>
 	<?= $form->field($model, 'email')->input('email') ?>
-	<?= $form->field($model, 'text')->label('Текст сообщения')->textarea(['rows' => 5])?>
+	<?= $form->field($model, 'text')->textarea(['rows' => 5])?>
 	<?= Html::submitButton('Отправить',['class'=>'btn btn-success']) ?>
 <?php ActiveForm::end() ?>

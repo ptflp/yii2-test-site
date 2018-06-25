@@ -13,4 +13,12 @@ class TestForm extends Model
     public $email;
     public $text;
 
+    public function attributeLabels()
+    {
+        return [
+            'name'=> 'Имя',
+            'email' => 'E-mail',
+            'text' => 'Текст сообщения'
+        ];
+    }
 }
