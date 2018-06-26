@@ -2,19 +2,18 @@
 
 namespace app\models;
 
-use yii\base\Model;
+use yii\db\ActiveRecord;
 
 /**
  * ContactForm is the model behind the contact form.
  */
-class TestForm extends Model
+class TestForm extends ActiveRecord
 {
-    public $name;
-    public $email;
-    public $text;
-    public $min=4;
-    public $max=15;
 
+    public static function tableName()
+    {
+        return 'posts';
+    }
     public function attributeLabels()
     {
         return [
@@ -26,18 +25,8 @@ class TestForm extends Model
     public function rules()
     {
         return [
-            [['name','email'],'required'],
+            [['name','text'],'required'],
             ['email','email'],
-            ['name','string','min'=>$this->min],
-            ['name','string','max'=>$this->max],
-            ['name','myRule'],
-            ['text','safe']
         ];
-    }
-    public function myRule($attr)
-    {
-        if (!in_array($this->$attr, ['hello','world'])) {
-            $this->addError($attr,'БЛЯТЬ!');
-        }
     }
 }
