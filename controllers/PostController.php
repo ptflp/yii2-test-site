@@ -51,8 +51,9 @@ class PostController extends AppController {
 		// $cats = Category::findAll(['parent' => 691]); //  row counts
 		// $query = "SELECT * FROM categories WHERE title LIKE '%pp%'"; using query
 		// $cats = Category::findBySql($query)->all();
-		$query = "SELECT * FROM categories WHERE title LIKE :search"; // query parametrs shielding
-		$cats = Category::findBySql($query, [':search' => '%pp%'])->all();
+		// $query = "SELECT * FROM categories WHERE title LIKE :search"; // query parametrs shielding
+		// $cats = Category::findBySql($query, [':search' => '%pp%'])->all();
+		$cats= Category::findOne(694);
 		return $this->render('show',compact('cats'));
 	}
 }

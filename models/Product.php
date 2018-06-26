@@ -1,18 +1,18 @@
-<?php 
+<?php
 namespace app\models;
 use yii\db\ActiveRecord;
 /**
  * saf
  */
-class Category extends ActiveRecord
+class Product extends ActiveRecord
 {
 	public static function tableName()
 	{
-		return 'categories';
+		return 'products';
 	}
-	public function getProducts()
+	public function getCategories()
 	{
-		return $this->hasMany(Product::className(), ['parent'=>'id']); // Связь один ко многим hasMany returns Array
+		return $this->haOne(Category::className(), ['id'=>'parent']); // Связь один к одному hasOne returns 1 object or null
 		// Table: Categories
 		// id: int
 		// title: string
@@ -27,6 +27,7 @@ class Category extends ActiveRecord
 		// content: string
 		// image: string
 		// price: string
+
 	}
 }
  ?>

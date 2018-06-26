@@ -10,7 +10,9 @@
 // 	// echo '<br>'.$cat->title;
 // }
 
-dump($cats);
+dump($cats); // возвращает категории без продуктов
+echo count ($cats->products); // после обращения к объекту объект инициализируется (ЛЕНИВАЯ ОТЛОЖЕННАЯ ЗАГРУЗКА)
+dump($cats); // Возвращает совмещенный объект
 //$this->title='ololo';
 $js = <<< JS
 	$('#btn').on('click',function() {
