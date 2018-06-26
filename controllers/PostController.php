@@ -19,12 +19,13 @@ class PostController extends AppController {
 		}
 		$model = new TestForm();
 		if ($model->load(Yii::$app->request->post())) {
-			dump(Yii::$app->request->post());
-			dump($model);
-			die();
+			// dump(Yii::$app->request->post());
+			// dump($model);
+			// die();
 			if($model->validate()) {
-				Yii::$app->session->setFlash()
-
+				Yii::$app->session->setFlash('success', 'Данные приняты');
+			} else {
+				Yii::$app->session->setFlash('error', 'Ошибка');
 			}
 		}
 		$model->min = $min ? $min : $model->min;

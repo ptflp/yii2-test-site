@@ -9,6 +9,14 @@ dump($model)
 */
 
 ?>
+<?php 
+if (Yii::$app->session->hasFlash('success')) {
+ 	echo Yii::$app->session->getFlash('success');
+ } ?>
+<?php 
+if (Yii::$app->session->hasFlash('error')) {
+ 	echo Yii::$app->session->getFlash('error');
+ } ?>
 <?php $form = ActiveForm::begin(['options'=> ['class'=>'form-horizontal','id'=>'myid']]) ?>
 	<?= $form->field($model, 'name')?>
 	<?= $form->field($model, 'email')->input('email') ?>
