@@ -10,9 +10,21 @@
 // 	// echo '<br>'.$cat->title;
 // }
 
-dump($cats); // возвращает категории без продуктов
-echo count ($cats->products); // после обращения к объекту объект инициализируется (ЛЕНИВАЯ ОТЛОЖЕННАЯ ЗАГРУЗКА)
-dump($cats); // Возвращает совмещенный объект
+// dump($cats); // возвращает категории без продуктов
+// echo count ($cats[0]->products); // после обращения к объекту объект инициализируется (ЛЕНИВАЯ ОТЛОЖЕННАЯ ЗАГРУЗКА)
+// dump($cats); // Возвращает совмещенный объект
+
+foreach ($cats as $cat) {
+	echo '<ul>';
+		echo '<li>'. $cat->title .'</li>';
+			$products = $cat->products;
+			foreach ($products as $product) {
+				echo '<ul>';
+					echo '<li>'. $product->title .'</li>';
+				echo '</ul>';
+			}
+	echo '</ul>';
+}
 //$this->title='ololo';
 $js = <<< JS
 	$('#btn').on('click',function() {

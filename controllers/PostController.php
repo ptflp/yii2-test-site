@@ -53,7 +53,10 @@ class PostController extends AppController {
 		// $cats = Category::findBySql($query)->all();
 		// $query = "SELECT * FROM categories WHERE title LIKE :search"; // query parametrs shielding
 		// $cats = Category::findBySql($query, [':search' => '%pp%'])->all();
-		$cats= Category::findOne(694);
+		// $cats= Category::findOne(694); Ленивая/отложенная загрузка при обращении к объекту products
+		// $cats= Category::find()->with('products')->where('id=694')->all(); // жадная загрузка
+		// $cats= Category::find()->all(); // Ленивая/отложенная загрузка при обращении к объекту products 41 query
+		$cats= Category::find()->with('products')->all(); // 6 query жадная загрузка
 		return $this->render('show',compact('cats'));
 	}
 }
