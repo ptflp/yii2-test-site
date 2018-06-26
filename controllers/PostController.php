@@ -38,7 +38,10 @@ class PostController extends AppController {
 		$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'ключевые слова']);
 		$this->view->registerMetaTag(['name' => 'description', 'content' => 'описание страницы']);
 		$this->view->title='Title from controller';
-		$cats = Category::find()->asArray()->all();
+		// $cats = Category::find()->all(); as Object
+		// $cats = Category::find()->orderBy(['id'=> SORT_ASC])->all(); as Object with Order Asc
+		// $cats = Category::find()->orderBy(['id'=> SORT_DESC])->all(); as Object with Order Desc
+		$cats = Category::find()->asArray()->all(); // as Array
 		return $this->render('show',compact('cats'));
 	}
 }
