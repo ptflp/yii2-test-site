@@ -1,4 +1,4 @@
-<?php 
+<?php
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 ?>
@@ -9,13 +9,21 @@ dump($model)
 */
 
 ?>
-<?php 
-if (Yii::$app->session->hasFlash('success')) {
- 	echo Yii::$app->session->getFlash('success');
+<?php
+if (Yii::$app->session->hasFlash('success')) { ?>
+	<div class="alert alert-success alert-dismissible" role="alert">
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  <strong>Success!</strong> <?=Yii::$app->session->getFlash('success')?>
+	</div>
+ <?php
  } ?>
-<?php 
-if (Yii::$app->session->hasFlash('error')) {
- 	echo Yii::$app->session->getFlash('error');
+<?php
+if (Yii::$app->session->hasFlash('error')) {?>
+	<div class="alert alert-danger alert-dismissible" role="alert">
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  <strong>Error!</strong> <?=Yii::$app->session->getFlash('error')?>
+	</div>
+ <?php
  } ?>
 <?php $form = ActiveForm::begin(['options'=> ['class'=>'form-horizontal','id'=>'myid']]) ?>
 	<?= $form->field($model, 'name')?>
