@@ -7,8 +7,12 @@ use yii\helpers\Html;
 <?php /*
 dump($model)
 */
-
 ?>
+
+<?php 
+dump($post);
+ ?>
+
 <?php
 if (Yii::$app->session->hasFlash('success')) { ?>
 	<div class="alert alert-success alert-dismissible" role="alert">

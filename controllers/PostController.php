@@ -18,6 +18,9 @@ class PostController extends AppController {
 			Yii::$app->request->post();
 			return dump($_POST);
 		}
+		$post=TestForm::findOne(3);
+		$post->email='globallinkliberty@yandex.ru';
+		$post->save();
 		$model = new TestForm();
 		// $model->name = 'Автор';
 		// $model->email = 'mail@mail.com';
@@ -36,7 +39,7 @@ class PostController extends AppController {
 		}
 		// $model->min = $min ? $min : $model->min;
 		// $model->max = $max ? $max : $model->max;
-		return $this->render('test', compact('model'));
+		return $this->render('test', compact('model','post'));
 	}
 	public function actionShow(){
 		$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'ключевые слова']);
