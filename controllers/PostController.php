@@ -24,6 +24,7 @@ class PostController extends AppController {
 			// die();
 			if($model->validate()) {
 				Yii::$app->session->setFlash('success', 'Данные приняты');
+				return $this->refresh();
 			} else {
 				Yii::$app->session->setFlash('error', 'Ошибка');
 			}
