@@ -7,7 +7,7 @@
 <button class="btn btn-success" id="btn">Click me</button>
 <?php
 foreach ($cats as $cat) {
-	echo '<br>'.$cat->title;
+	// echo '<br>'.$cat->title;
 }
 
 dump($cats);
