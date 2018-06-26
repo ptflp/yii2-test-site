@@ -6,6 +6,7 @@
 	<h1>Show action</h1>
 <button class="btn btn-success" id="btn">Click me</button>
 <?php
+dump($cats);
 //$this->title='ololo';
 $js = <<< JS
 	$('#btn').on('click',function() {
