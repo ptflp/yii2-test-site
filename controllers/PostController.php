@@ -41,7 +41,18 @@ class PostController extends AppController {
 		// $cats = Category::find()->all(); as Object
 		// $cats = Category::find()->orderBy(['id'=> SORT_ASC])->all(); as Object with Order Asc
 		// $cats = Category::find()->orderBy(['id'=> SORT_DESC])->all(); as Object with Order Desc
-		$cats = Category::find()->asArray()->all(); // as Array
+		// $cats = Category::find()->asArray()->all(); // as Array
+		// $cats = Category::find()->asArray()->where('parent=691')->all(); // as Array with where
+		// $cats = Category::find()->asArray()->where(['like','title','pp'])->all(); // as Array with where like
+		// $cats = Category::find()->asArray()->where(['<','id',695])->all(); // as Array with where below 695
+		// $cats = Category::find()->asArray()->where(['<','id',695])->limit(1)->all(); // as Array with limit, limit is better than ->one()
+		// $cats = Category::find()->asArray()->where(['<','id',695])->count(); //  row counts
+		// $cats = Category::findOne(['<','id',695]); //  find one row
+		// $cats = Category::findAll(['parent' => 691]); //  row counts
+		// $query = "SELECT * FROM categories WHERE title LIKE '%pp%'"; using query
+		// $cats = Category::findBySql($query)->all();
+		$query = "SELECT * FROM categories WHERE title LIKE :search"; // query parametrs shielding
+		$cats = Category::findBySql($query, [':search' => '%pp%'])->all();
 		return $this->render('show',compact('cats'));
 	}
 }

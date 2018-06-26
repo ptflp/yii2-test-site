@@ -6,9 +6,9 @@
 	<h1>Show action</h1>
 <button class="btn btn-success" id="btn">Click me</button>
 <?php
-foreach ($cats as $cat) {
-	// echo '<br>'.$cat->title;
-}
+// foreach ($cats as $cat) {
+// 	// echo '<br>'.$cat->title;
+// }
 
 dump($cats);
 //$this->title='ololo';
