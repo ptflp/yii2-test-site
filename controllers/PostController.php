@@ -19,15 +19,15 @@ class PostController extends AppController {
 			return dump($_POST);
 		}
 		$model = new TestForm();
-		$model->name = 'Автор';
-		$model->email = 'mail@mail.com';
-		$model->text = 'Текст сообщения';
-		$model->save(); //параметр false отключит валидацию данных
+		// $model->name = 'Автор';
+		// $model->email = 'mail@mail.com';
+		// $model->text = 'Текст сообщения';
+		// $model->save(); //параметр false отключит валидацию данных
 		if ($model->load(Yii::$app->request->post())) {
 			// dump(Yii::$app->request->post());
 			// dump($model);
 			// die();
-			if($model->validate()) {
+			if($model->save()) {
 				Yii::$app->session->setFlash('success', 'Данные приняты');
 				return $this->refresh();
 			} else {
