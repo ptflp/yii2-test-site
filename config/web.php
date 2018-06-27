@@ -50,6 +50,11 @@ $config = [
             'showScriptName' => false,
             'suffix' => '.html',
             'rules' => [
+                [
+                    'pattern' => '',
+                    'route' => 'site/index',
+                    'suffix' => ''
+                ],
                 '<action:(about|contact|login|logout)>' => 'site/<action>'
             ],
         ],
