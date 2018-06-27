@@ -48,6 +48,7 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'suffix' => '.html',
             'rules' => [
                 '<action:(about|contact|login|logout)>' => 'site/<action>'
             ],
