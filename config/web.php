@@ -49,7 +49,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'about' => 'site/about'
+                '<a:(about|contact|login|logout)>' => 'site/<a>'
             ],
         ],
     ],
