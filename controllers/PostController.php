@@ -21,7 +21,8 @@ class PostController extends AppController {
 		$post=TestForm::findOne(3); // Обновление данных в моделе, в базе данных.
 		$post->email='globallinkliberty@yandex.ru'; // Обновление данных в моделе, в базе данных.
 		$post->save(); // Обновление данных в моделе, в базе данных.
-		$post->delete(); // удаление данных с базы данных
+		TestForm::deleteAll(['>','id',3]); //удаление всех записей где id > 3
+		// $post->delete(); // удаление данных с базы данных
 		$model = new TestForm();
 		// $model->name = 'Автор';
 		// $model->email = 'mail@mail.com';
