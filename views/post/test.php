@@ -29,9 +29,10 @@ if (Yii::$app->session->hasFlash('error')) {?>
 	</div>
  <?php
  } ?>
-<?php $form = ActiveForm::begin(['options'=> ['class'=>'form-horizontal','id'=>'myid']]) ?>
+<?php $form = ActiveForm::begin(['options'=> ['id'=>'myid']]) ?>
 	<?= $form->field($model, 'name')?>
 	<?= $form->field($model, 'email')->input('email') ?>
+	<?= yii\jui\DatePicker::widget(['name' => 'attributeName']) ?>
 	<?= $form->field($model, 'text')->textarea(['rows' => 5])?>
 	<?= Html::submitButton('Отправить',['class'=>'btn btn-success']) ?>
 <?php ActiveForm::end() ?>
