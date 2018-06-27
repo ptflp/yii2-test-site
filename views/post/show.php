@@ -7,7 +7,10 @@ use app\components\MyWidget;
 
 	<h1>Show action</h1>
 <button class="btn btn-success" id="btn">Click me</button>
-<?=MyWidget::widget(['name'=>$name])?>
+<?php MyWidget::begin(['name'=>$name])?>
+<h1> Ololoe </h1>
+<?php MyWidget::end()?>
+
 <?php
 // foreach ($cats as $cat) {
 // 	// echo '<br>'.$cat->title;
