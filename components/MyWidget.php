@@ -11,11 +11,15 @@ class MyWidget extends Widget
 	public function init()
 	{
 			parent::init();
-			if($this->name === null || $this->name === false) $this->name='Гость';
+			// if($this->name === null || $this->name === false) $this->name='Гость';
+			ob_start();
 	}
 	public function run()
 	{
-		return $this->render('my', ['name'=>$this->name]);
+		$content = ob_get_clean();
+		$content = mb_strtoupper($content);
+		// return $this->render('my', ['name'=>$this->name]);
+		return $this->render('my',compact('content'));
 	}
 }
  ?>

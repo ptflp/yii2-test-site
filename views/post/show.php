@@ -8,7 +8,7 @@ use app\components\MyWidget;
 	<h1>Show action</h1>
 <button class="btn btn-success" id="btn">Click me</button>
 <?php MyWidget::begin(['name'=>$name])?>
-<h1> Ololoe </h1>
+<h1> привет мир </h1>
 <?php MyWidget::end()?>
 
 <?php
