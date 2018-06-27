@@ -15,7 +15,7 @@ class MyWidget extends Widget
 	}
 	public function run()
 	{
-		return "<h1>{$this->name}, Hello World</h1>";
+		return $this->render('my', ['name'=>$this->name]);
 	}
 }
  ?>
