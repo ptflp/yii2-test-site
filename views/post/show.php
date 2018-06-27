@@ -1,10 +1,13 @@
-
+<?php
+use app\components\MyWidget;
+ ?>
 <?php $this->beginBlock('block1'); ?>
 	<h1>Заголовок страницы</h1>
 <?php $this->endBlock(); ?>
 
 	<h1>Show action</h1>
 <button class="btn btn-success" id="btn">Click me</button>
+<?=MyWidget::widget(['name'=>$name])?>
 <?php
 // foreach ($cats as $cat) {
 // 	// echo '<br>'.$cat->title;

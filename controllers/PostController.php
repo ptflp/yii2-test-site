@@ -43,7 +43,7 @@ class PostController extends AppController {
 		// $model->max = $max ? $max : $model->max;
 		return $this->render('test', compact('model','post'));
 	}
-	public function actionShow(){
+	public function actionShow($name=false){
 		$this->view->registerMetaTag(['name' => 'keywords', 'content' => 'ключевые слова']);
 		$this->view->registerMetaTag(['name' => 'description', 'content' => 'описание страницы']);
 		$this->view->title='Title from controller';
@@ -66,6 +66,6 @@ class PostController extends AppController {
 		// $cats= Category::find()->with('products')->where('id=694')->all(); // жадная загрузка
 		// $cats= Category::find()->all(); // Ленивая/отложенная загрузка при обращении к объекту products 41 query
 		$cats= Category::find()->with('products')->all(); // 6 query жадная загрузка
-		return $this->render('show',compact('cats'));
+		return $this->render('show',compact('cats','name'));
 	}
 }
