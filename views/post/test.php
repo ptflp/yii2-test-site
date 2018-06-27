@@ -10,7 +10,7 @@ dump($model)
 ?>
 
 <?php 
-dump($post);
+// dump($post);
  ?>
 
 <?php

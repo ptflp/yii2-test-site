@@ -18,9 +18,9 @@ class PostController extends AppController {
 			Yii::$app->request->post();
 			return dump($_POST);
 		}
-		$post=TestForm::findOne(3);
-		$post->email='globallinkliberty@yandex.ru';
-		$post->save();
+		$post=TestForm::findOne(3); // Обновление данных в моделе, в базе данных.
+		$post->email='globallinkliberty@yandex.ru'; // Обновление данных в моделе, в базе данных.
+		$post->save(); // Обновление данных в моделе, в базе данных.
 		$model = new TestForm();
 		// $model->name = 'Автор';
 		// $model->email = 'mail@mail.com';
